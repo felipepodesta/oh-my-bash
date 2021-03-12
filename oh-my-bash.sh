@@ -19,7 +19,7 @@ fpath=($OSH/functions $fpath)
 # Set OSH_CUSTOM to the path where your custom config files
 # and plugins exists, or else we will use the default custom/
 if [[ -z "$OSH_CUSTOM" ]]; then
-    OSH_CUSTOM="$OSH/custom"
+  OSH_CUSTOM="$OSH/custom"
 fi
 
 # Set OSH_CACHE_DIR to the path where cache files should be created
@@ -58,6 +58,7 @@ is_completion() {
   local name=$2
   test -f $base_dir/completions/$name/$name.completion.sh
 }
+
 # Add all defined completions to fpath. This must be done
 # before running compinit.
 for completion in ${completions[@]}; do
@@ -73,6 +74,7 @@ is_alias() {
   local name=$2
   test -f $base_dir/aliases/$name/$name.aliases.sh
 }
+
 # Add all defined completions to fpath. This must be done
 # before running compinit.
 for alias in ${aliases[@]}; do
@@ -151,7 +153,7 @@ else
 fi
 
 if [[ $PROMPT ]]; then
-    export PS1="\["$PROMPT"\]"
+  export PS1="\["$PROMPT"\]"
 fi
 
 if ! type_exists '__git_ps1' ; then
